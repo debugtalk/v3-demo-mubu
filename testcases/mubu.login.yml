@@ -15,7 +15,7 @@ teststeps:
             sec-fetch-site: same-origin
             sec-fetch-user: ?1
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
         method: GET
         url: /
     validate:
@@ -31,7 +31,7 @@ teststeps:
             sec-fetch-site: same-origin
             sec-fetch-user: ?1
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
         method: GET
         url: /login
     validate:
@@ -47,7 +47,7 @@ teststeps:
             sec-fetch-site: same-origin
             sec-fetch-user: ?1
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
         method: GET
         url: /login/password
     validate:
@@ -67,7 +67,7 @@ teststeps:
             sec-fetch-mode: cors
             sec-fetch-site: same-origin
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
             x-requested-with: XMLHttpRequest
         method: POST
         url: /api/login/submit
@@ -93,7 +93,7 @@ teststeps:
             sec-fetch-site: same-origin
             sec-fetch-user: ?1
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
         method: GET
         url: /list
     validate:
@@ -109,7 +109,7 @@ teststeps:
             sec-fetch-mode: cors
             sec-fetch-site: same-origin
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
             x-requested-with: XMLHttpRequest
         method: POST
         url: /api/list/tip_new_update
@@ -137,7 +137,7 @@ teststeps:
             sec-fetch-mode: cors
             sec-fetch-site: same-origin
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
             x-requested-with: XMLHttpRequest
         method: POST
         url: /api/list/get
@@ -160,7 +160,7 @@ teststeps:
             sec-fetch-mode: cors
             sec-fetch-site: same-origin
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 HttpRunner/${get_httprunner_version()}
             x-requested-with: XMLHttpRequest
         method: POST
         url: /api/message/get_message_unread
