@@ -22,7 +22,7 @@ teststeps:
     validate:
     -   eq:
         - status_code
-        - 200
+        - ${get_expected_status_code(100, 100)}
 -   name: /login
     request:
         headers:

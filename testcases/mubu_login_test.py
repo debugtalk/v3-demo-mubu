@@ -34,7 +34,9 @@ class TestCaseMubuLogin(HttpRunner):
                     "method": "GET",
                     "url": "/",
                 },
-                "validate": [{"eq": ["status_code", 200]}],
+                "validate": [
+                    {"eq": ["status_code", "${get_expected_status_code(100, 100)}"]}
+                ],
             }
         ),
         TStep(
