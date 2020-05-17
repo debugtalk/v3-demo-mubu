@@ -192,6 +192,8 @@ teststeps:
             x-requested-with: XMLHttpRequest
         method: POST
         url: https://mubu.com/api/list/create_doc
+    extract:
+        docId: body.data.id
     validate:
     -   eq:
         - status_code
@@ -202,7 +204,7 @@ teststeps:
     -   eq:
         - body.msg
         - null
--   name: /doc27dLSkCB1LI
+-   name: /doc$docId
     request:
         headers:
             cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
@@ -214,7 +216,7 @@ teststeps:
             user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
         method: GET
-        url: https://mubu.com/doc27dLSkCB1LI
+        url: https://mubu.com/doc$docId
     validate:
     -   eq:
         - status_code
@@ -225,7 +227,7 @@ teststeps:
         headers:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -251,7 +253,7 @@ teststeps:
             content-type: application/json;charset=UTF-8
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -260,7 +262,7 @@ teststeps:
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
             x-request-id: 80f926fe-37c4-45a0-aa85-96d78b3c78e0
         json:
-            docId: 27dLSkCB1LI
+            docId: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/document/get
     validate:
@@ -279,7 +281,7 @@ teststeps:
             content-type: application/json;charset=UTF-8
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -288,7 +290,7 @@ teststeps:
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
             x-request-id: d7f43e29-a625-4561-95f3-906134e71f37
         json:
-            document_id: 27dLSkCB1LI
+            document_id: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/user/current_level
     validate:
@@ -307,7 +309,7 @@ teststeps:
         headers:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -332,7 +334,7 @@ teststeps:
         headers:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -357,7 +359,7 @@ teststeps:
         headers:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -382,7 +384,7 @@ teststeps:
         headers:
             access-control-request-headers: data-unique-id,jwt-token,request-id,token,x-request-id
             access-control-request-method: GET
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -390,7 +392,7 @@ teststeps:
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
         method: OPTIONS
         params:
-            documentId: 27dLSkCB1LI
+            documentId: $docId
             memberId: '1107710683005844033'
         url: https://api2.mubu.com/v3/api/colla/members
     validate:
@@ -402,7 +404,7 @@ teststeps:
         headers:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: members:1107710683005844033:1589703664535
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -413,7 +415,7 @@ teststeps:
             x-request-id: 8a14c571-8a71-45f2-be49-750090fcf771
         method: GET
         params:
-            documentId: 27dLSkCB1LI
+            documentId: $docId
             memberId: '1107710683005844033'
         url: https://api2.mubu.com/v3/api/colla/members
     validate:
@@ -433,7 +435,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:4
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -460,7 +462,7 @@ teststeps:
                     -   name: nameChanged
                         original: de
                         title: dem
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 0
                     viewType: OUTLINE
@@ -468,7 +470,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 4
             requestId: MESSAGE:1449164:1107710683005844033:4
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -488,7 +490,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:6
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -512,7 +514,7 @@ teststeps:
                     -   name: nameChanged
                         original: demo
                         title: demo1
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 1
                     viewType: OUTLINE
@@ -520,7 +522,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 6
             requestId: MESSAGE:1449164:1107710683005844033:6
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -540,7 +542,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:9
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -570,7 +572,7 @@ teststeps:
                             - nodes
                             - 0
                         name: create
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 2
                     viewType: OUTLINE
@@ -578,7 +580,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 9
             requestId: MESSAGE:1449164:1107710683005844033:9
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -598,7 +600,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:11
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -629,7 +631,7 @@ teststeps:
                                 id: 888c417018e0c859e44e5c094940ff4d
                                 modified: 1589703689544
                                 text: <span>li</span>
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 3
                     viewType: OUTLINE
@@ -637,7 +639,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 11
             requestId: MESSAGE:1449164:1107710683005844033:11
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -657,7 +659,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:13
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -688,7 +690,7 @@ teststeps:
                                 id: 888c417018e0c859e44e5c094940ff4d
                                 modified: 1589703689595
                                 text: <span>lin</span>
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 4
                     viewType: OUTLINE
@@ -696,7 +698,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 13
             requestId: MESSAGE:1449164:1107710683005844033:13
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -716,7 +718,7 @@ teststeps:
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
             member-id: '1107710683005844033'
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             request-id: MESSAGE:1449164:1107710683005844033:14
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -747,7 +749,7 @@ teststeps:
                                 id: 888c417018e0c859e44e5c094940ff4d
                                 modified: 1589703690459
                                 text: <span>line1</span>
-                    documentId: 27dLSkCB1LI
+                    documentId: $docId
                     type: CHANGE
                     version: 5
                     viewType: OUTLINE
@@ -755,7 +757,7 @@ teststeps:
             messageType: BROADCAST
             reqId: 14
             requestId: MESSAGE:1449164:1107710683005844033:14
-            token: 27dLSkCB1LI
+            token: $docId
         method: POST
         url: https://api2.mubu.com/v3/api/colla/message
     validate:
@@ -774,7 +776,7 @@ teststeps:
             content-type: application/json;charset=UTF-8
             data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
             jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: empty
             sec-fetch-mode: cors
             sec-fetch-site: same-site
@@ -783,7 +785,7 @@ teststeps:
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
             x-request-id: 07c07671-93f5-4ae9-822e-32f439369afb
         json:
-            documentId: 27dLSkCB1LI
+            documentId: $docId
             keywords: ''
         method: POST
         url: https://api2.mubu.com/v3/api/document/get_recent_list
@@ -801,7 +803,7 @@ teststeps:
     request:
         headers:
             cookie: SLARDAR_WEB_ID=f259d169-aa0d-4e36-956b-0dd64a6f0c7d
-            referer: https://mubu.com/doc27dLSkCB1LI
+            referer: https://mubu.com/doc$docId
             sec-fetch-dest: document
             sec-fetch-mode: navigate
             sec-fetch-site: same-origin
