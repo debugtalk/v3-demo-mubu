@@ -182,7 +182,7 @@ teststeps:
             type: '0'
         headers:
             content-type: application/x-www-form-urlencoded; charset=UTF-8
-            cookie: Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504=1589703653
+            cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -205,7 +205,7 @@ teststeps:
 -   name: /doc27dLSkCB1LI
     request:
         headers:
-            cookie: Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504=1589703653
+            cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
             referer: https://mubu.com/list
             sec-fetch-dest: document
             sec-fetch-mode: navigate
@@ -818,7 +818,7 @@ teststeps:
     request:
         data: ''
         headers:
-            cookie: SLARDAR_WEB_ID=f259d169-aa0d-4e36-956b-0dd64a6f0c7d
+            cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -847,7 +847,7 @@ teststeps:
             source: ''
         headers:
             content-type: application/x-www-form-urlencoded; charset=UTF-8
-            cookie: SLARDAR_WEB_ID=f259d169-aa0d-4e36-956b-0dd64a6f0c7d
+            cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -871,7 +871,7 @@ teststeps:
     request:
         data: ''
         headers:
-            cookie: SLARDAR_WEB_ID=f259d169-aa0d-4e36-956b-0dd64a6f0c7d
+            cookie: user_persistence=29ded4a9-2149-429b-a204-e24f86809f28
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
