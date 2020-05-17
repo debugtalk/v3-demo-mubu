@@ -1,5 +1,6 @@
 import time
 
+import requests
 from httprunner import __version__
 
 
@@ -21,3 +22,14 @@ def sleep(n_secs):
 
 def get_expected_status_code(a, b):
     return a + b
+
+
+def wait_until_complete():
+
+    while True:
+        resp = requests.get("xxx")
+        if not resp.json()["ok"]:
+            time.sleep(10)
+            continue
+
+        break

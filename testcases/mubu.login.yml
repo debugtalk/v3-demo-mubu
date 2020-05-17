@@ -80,6 +80,7 @@ teststeps:
         jwt_token: cookies."Jwt-Token"
     teardown_hooks:
         - ${sleep(1)}
+        - ${wait_until_complete()}
     validate:
     -   eq:
         - status_code

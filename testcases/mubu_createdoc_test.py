@@ -18,13 +18,7 @@ class TestCaseMubuCreatedoc(HttpRunner):
     )
 
     teststeps = [
-        TStep(
-            **{
-                "name": "login mubu",
-                "testcase": "testcases/mubu.login.yml",
-                "export": ["user_persistence"],
-            }
-        ),
+        TStep(**{"name": "login mubu", "testcase": "testcases/mubu.login.yml"}),
         TStep(
             **{
                 "name": "/api/list/create_doc",
