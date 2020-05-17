@@ -74,6 +74,8 @@ teststeps:
     extract:
         user_persistence: cookies.user_persistence
         jwt_token: cookies."Jwt-Token"
+    teardown_hooks:
+        - ${sleep(1)}
     validate:
     -   eq:
         - status_code
