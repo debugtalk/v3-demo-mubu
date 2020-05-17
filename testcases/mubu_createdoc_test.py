@@ -17,7 +17,39 @@ class TestCaseMubuCreatedoc(HttpRunner):
     )
 
     teststeps = [
-        TStep(**{"name": "login mubu", "testcase": "testcases/mubu.login.yml"}),
+        TStep(
+            **{
+                "name": "login mubu",
+                "testcase": "testcases/mubu.login.yml",
+                "export": ["user_persistence"],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/api/list/create_doc",
+                "request": {
+                    "data": {"folderId": "0", "type": "0"},
+                    "headers": {
+                        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        "cookie": "user_persistence=$user_persistence",
+                        "referer": "https://mubu.com/list",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-origin",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-requested-with": "XMLHttpRequest",
+                    },
+                    "method": "POST",
+                    "url": "https://mubu.com/api/list/create_doc",
+                },
+                "extract": {"docId": "body.data.id"},
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", None]},
+                ],
+            }
+        ),
     ]
 
 

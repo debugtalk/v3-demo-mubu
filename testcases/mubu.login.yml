@@ -4,6 +4,7 @@ config:
         user_phone: '18613143458'
         password: moFrwx$!kz3DTRm@@*aV
     verify: false
+    export: ["user_persistence"]
 teststeps:
 -   name: /
     request:
@@ -69,6 +70,8 @@ teststeps:
             x-requested-with: XMLHttpRequest
         method: POST
         url: https://mubu.com/api/login/submit
+    extract:
+        user_persistence: cookies.user_persistence
     validate:
     -   eq:
         - status_code

@@ -91,6 +91,7 @@ class TestCaseMubuLogin(HttpRunner):
                     "method": "POST",
                     "url": "https://mubu.com/api/login/submit",
                 },
+                "extract": {"user_persistence": "cookies.user_persistence"},
                 "validate": [
                     {"eq": ["status_code", 200]},
                     {"eq": ["body.code", 0]},
