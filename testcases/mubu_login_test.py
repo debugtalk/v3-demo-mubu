@@ -24,6 +24,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "name": "/",
                 "request": {
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
                         "sec-fetch-site": "same-origin",
@@ -41,6 +42,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "name": "/login",
                 "request": {
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "referer": "https://mubu.com/",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -59,6 +61,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "name": "/login/password",
                 "request": {
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "referer": "https://mubu.com/login",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -82,6 +85,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "remember": "true",
                     },
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
                         "referer": "https://mubu.com/login/password",
                         "sec-fetch-dest": "empty",
@@ -97,6 +101,7 @@ class TestCaseMubuLogin(HttpRunner):
                     "user_persistence": "cookies.user_persistence",
                     "jwt_token": 'cookies."Jwt-Token"',
                 },
+                "teardown_hooks": ["${sleep(1)}"],
                 "validate": [
                     {"eq": ["status_code", 200]},
                     {"eq": ["body.code", 0]},
@@ -109,6 +114,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "name": "/list",
                 "request": {
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "referer": "https://mubu.com/login/password",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -128,6 +134,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "request": {
                     "data": "",
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "referer": "https://mubu.com/list",
                         "sec-fetch-dest": "empty",
                         "sec-fetch-mode": "cors",
@@ -156,6 +163,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "source": "",
                     },
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
                         "referer": "https://mubu.com/list",
                         "sec-fetch-dest": "empty",
@@ -180,6 +188,7 @@ class TestCaseMubuLogin(HttpRunner):
                 "request": {
                     "data": "",
                     "headers": {
+                        "X-Request-ID": "${gen_request_id()}",
                         "referer": "https://mubu.com/list",
                         "sec-fetch-dest": "empty",
                         "sec-fetch-mode": "cors",

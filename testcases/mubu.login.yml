@@ -10,6 +10,7 @@ teststeps:
 -   name: /
     request:
         headers:
+            X-Request-ID: ${gen_request_id()}
             sec-fetch-dest: document
             sec-fetch-mode: navigate
             sec-fetch-site: same-origin
@@ -25,6 +26,7 @@ teststeps:
 -   name: /login
     request:
         headers:
+            X-Request-ID: ${gen_request_id()}
             referer: https://mubu.com/
             sec-fetch-dest: document
             sec-fetch-mode: navigate
@@ -41,6 +43,7 @@ teststeps:
 -   name: /login/password
     request:
         headers:
+            X-Request-ID: ${gen_request_id()}
             referer: https://mubu.com/login
             sec-fetch-dest: document
             sec-fetch-mode: navigate
@@ -61,6 +64,7 @@ teststeps:
             phone: $user_phone
             remember: 'true'
         headers:
+            X-Request-ID: ${gen_request_id()}
             content-type: application/x-www-form-urlencoded; charset=UTF-8
             referer: https://mubu.com/login/password
             sec-fetch-dest: empty
@@ -89,6 +93,7 @@ teststeps:
 -   name: /list
     request:
         headers:
+            X-Request-ID: ${gen_request_id()}
             referer: https://mubu.com/login/password
             sec-fetch-dest: document
             sec-fetch-mode: navigate
@@ -106,6 +111,7 @@ teststeps:
     request:
         data: ''
         headers:
+            X-Request-ID: ${gen_request_id()}
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
@@ -133,6 +139,7 @@ teststeps:
             sort: name
             source: ''
         headers:
+            X-Request-ID: ${gen_request_id()}
             content-type: application/x-www-form-urlencoded; charset=UTF-8
             referer: https://mubu.com/list
             sec-fetch-dest: empty
@@ -157,6 +164,7 @@ teststeps:
     request:
         data: ''
         headers:
+            X-Request-ID: ${gen_request_id()}
             referer: https://mubu.com/list
             sec-fetch-dest: empty
             sec-fetch-mode: cors
