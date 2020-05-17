@@ -1,0 +1,15 @@
+
+config:
+    name: "request methods testcase: reference testcase"
+    variables:
+        foo1: session_bar1
+    base_url: "https://postman-echo.com"
+    verify: False
+
+teststeps:
+-
+    name: request with referenced testcase
+    variables:
+        foo1: override_bar1
+    # NOTICE: relative testcase path based on debugtalk.py
+    testcase: testcases/demo_testcase_request.yml
