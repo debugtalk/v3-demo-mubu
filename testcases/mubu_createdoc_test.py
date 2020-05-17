@@ -50,6 +50,51 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 ],
             }
         ),
+        TStep(
+            **{
+                "name": "/doc$docId",
+                "request": {
+                    "headers": {
+                        "cookie": "user_persistence=$user_persistence",
+                        "referer": "https://mubu.com/list",
+                        "sec-fetch-dest": "document",
+                        "sec-fetch-mode": "navigate",
+                        "sec-fetch-site": "same-origin",
+                        "sec-fetch-user": "?1",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                    },
+                    "method": "GET",
+                    "url": "https://mubu.com/doc$docId",
+                },
+                "validate": [{"eq": ["status_code", 200]}],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/v3/api/user/current_user",
+                "request": {
+                    "data": "",
+                    "headers": {
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "8d64a21f-b97a-4900-9fc2-6ffb60071d7b",
+                    },
+                    "method": "POST",
+                    "url": "https://api2.mubu.com/v3/api/user/current_user",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", "success"]},
+                ],
+            }
+        ),
     ]
 
 

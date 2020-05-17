@@ -4,7 +4,7 @@ config:
         user_phone: '18613143458'
         password: moFrwx$!kz3DTRm@@*aV
     verify: false
-    export: ["user_persistence"]
+    export: ["user_persistence", "jwt_token"]
 teststeps:
 -   name: /
     request:
@@ -72,6 +72,7 @@ teststeps:
         url: https://mubu.com/api/login/submit
     extract:
         user_persistence: cookies.user_persistence
+        jwt_token: cookies."Jwt-Token"
     validate:
     -   eq:
         - status_code

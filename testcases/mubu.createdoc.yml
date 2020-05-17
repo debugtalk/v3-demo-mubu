@@ -38,60 +38,60 @@ teststeps:
     -   eq:
         - body.msg
         - null
-#-   name: /doc$docId
-#    request:
-#        headers:
-#            cookie: user_persistence=$user_persistence
-#            referer: https://mubu.com/list
-#            sec-fetch-dest: document
-#            sec-fetch-mode: navigate
-#            sec-fetch-site: same-origin
-#            sec-fetch-user: ?1
-#            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-#                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
-#        method: GET
-#        url: https://mubu.com/doc$docId
-#    validate:
-#    -   eq:
-#        - status_code
-#        - 200
-#-   name: /v3/api/user/current_user
-#    request:
-#        data: ''
-#        headers:
-#            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-#            referer: https://mubu.com/doc$docId
-#            sec-fetch-dest: empty
-#            sec-fetch-mode: cors
-#            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
-#            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
-#                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
-#            x-request-id: 8d64a21f-b97a-4900-9fc2-6ffb60071d7b
-#        method: POST
-#        url: https://api2.mubu.com/v3/api/user/current_user
-#    validate:
-#    -   eq:
-#        - status_code
-#        - 200
-#    -   eq:
-#        - body.code
-#        - 0
-#    -   eq:
-#        - body.msg
-#        - success
+-   name: /doc$docId
+    request:
+        headers:
+            cookie: user_persistence=$user_persistence
+            referer: https://mubu.com/list
+            sec-fetch-dest: document
+            sec-fetch-mode: navigate
+            sec-fetch-site: same-origin
+            sec-fetch-user: ?1
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+        method: GET
+        url: https://mubu.com/doc$docId
+    validate:
+    -   eq:
+        - status_code
+        - 200
+-   name: /v3/api/user/current_user
+    request:
+        data: ''
+        headers:
+            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
+            jwt-token: $jwt_token
+            referer: https://mubu.com/doc$docId
+            sec-fetch-dest: empty
+            sec-fetch-mode: cors
+            sec-fetch-site: same-site
+            token: $jwt_token
+            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
+                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+            x-request-id: 8d64a21f-b97a-4900-9fc2-6ffb60071d7b
+        method: POST
+        url: https://api2.mubu.com/v3/api/user/current_user
+    validate:
+    -   eq:
+        - status_code
+        - 200
+    -   eq:
+        - body.code
+        - 0
+    -   eq:
+        - body.msg
+        - success
 #-   name: /v3/api/document/get
 #    request:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 80f926fe-37c4-45a0-aa85-96d78b3c78e0
@@ -114,12 +114,12 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: d7f43e29-a625-4561-95f3-906134e71f37
@@ -142,12 +142,12 @@ teststeps:
 #        data: ''
 #        headers:
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: ccddfa20-40d6-42bc-8964-8730a57da9ba
@@ -167,12 +167,12 @@ teststeps:
 #    request:
 #        headers:
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 5d1ba900-f963-49c2-8125-6ffdbae77eaf
@@ -192,12 +192,12 @@ teststeps:
 #    request:
 #        headers:
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 4aca8841-02bb-47da-bb2f-66838ccd9a03
@@ -237,13 +237,13 @@ teststeps:
 #    request:
 #        headers:
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            request-id: members:1107710683005844033:1589703664535
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 8a14c571-8a71-45f2-be49-750090fcf771
@@ -267,14 +267,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:4
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 83b17d4d-8832-422c-8730-befe08d28125
@@ -322,14 +322,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:6
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 95dadaf4-ea7f-43b9-b13f-7bec3fb6c0bd
@@ -374,14 +374,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:9
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 1dbd795d-58de-49d5-8d44-5406f98d0518
@@ -432,14 +432,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:11
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 709f8508-e715-4e45-a84b-c35b380223af
@@ -491,14 +491,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:13
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 72748280-275b-4e51-82c1-647e41601328
@@ -550,14 +550,14 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            member-id: '1107710683005844033'
 #            referer: https://mubu.com/doc$docId
 #            request-id: MESSAGE:1449164:1107710683005844033:14
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: d692bb90-c282-4ec2-ac61-900ec499495e
@@ -609,12 +609,12 @@ teststeps:
 #        headers:
 #            content-type: application/json;charset=UTF-8
 #            data-unique-id: 5410ad30-980c-11ea-8923-e551129da490
-#            jwt-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            jwt-token: $jwt_token
 #            referer: https://mubu.com/doc$docId
 #            sec-fetch-dest: empty
 #            sec-fetch-mode: cors
 #            sec-fetch-site: same-site
-#            token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDQ5MTY0IiwiZXhwIjoxNTkyMjk1NjUzLCJpYXQiOjE1ODk3MDM2NTN9.OwEoMYrqRiOwWENWYpwKubRyId70G0vwoUoH8-hlGIVI9Sie7CvoJJXzo66Apb7bfpLNxhjBaSNbB3AS7LCgrA
+#            token: $jwt_token
 #            user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36
 #                (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
 #            x-request-id: 07c07671-93f5-4ae9-822e-32f439369afb
