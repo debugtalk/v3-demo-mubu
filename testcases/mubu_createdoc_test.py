@@ -22,7 +22,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "name": "/",
                 "request": {
                     "headers": {
-                        "cookie": "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504=1589703642",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
                         "sec-fetch-site": "same-origin",
@@ -40,7 +39,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "name": "/login",
                 "request": {
                     "headers": {
-                        "cookie": "SLARDAR_WEB_ID=f1827e95-fc65-4b8f-b1a5-9b2bb5013426",
                         "referer": "https://mubu.com/",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -59,7 +57,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "name": "/login/password",
                 "request": {
                     "headers": {
-                        "cookie": "reg_focusId=256b52a0-249c-45ef-bf0e-17221b8a5c3",
                         "referer": "https://mubu.com/login",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -84,7 +81,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                     },
                     "headers": {
                         "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                        "cookie": "Hm_lpvt_4426cbb0486a79ea049b4ad52d81b504=1589703649",
                         "referer": "https://mubu.com/login/password",
                         "sec-fetch-dest": "empty",
                         "sec-fetch-mode": "cors",
@@ -107,7 +103,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "name": "/list",
                 "request": {
                     "headers": {
-                        "cookie": "user_persistence=29ded4a9-2149-429b-a204-e24f86809f28",
                         "referer": "https://mubu.com/login/password",
                         "sec-fetch-dest": "document",
                         "sec-fetch-mode": "navigate",
@@ -127,7 +122,6 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "request": {
                     "data": "",
                     "headers": {
-                        "cookie": "user_persistence=29ded4a9-2149-429b-a204-e24f86809f28",
                         "referer": "https://mubu.com/list",
                         "sec-fetch-dest": "empty",
                         "sec-fetch-mode": "cors",
@@ -137,6 +131,58 @@ class TestCaseMubuCreatedoc(HttpRunner):
                     },
                     "method": "POST",
                     "url": "https://mubu.com/api/list/tip_new_update",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", None]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/api/list/get",
+                "request": {
+                    "data": {
+                        "folderId": "0",
+                        "keywords": "",
+                        "sort": "name",
+                        "source": "",
+                    },
+                    "headers": {
+                        "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        "referer": "https://mubu.com/list",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-origin",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-requested-with": "XMLHttpRequest",
+                    },
+                    "method": "POST",
+                    "url": "https://mubu.com/api/list/get",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", None]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/api/message/get_message_unread",
+                "request": {
+                    "data": "",
+                    "headers": {
+                        "referer": "https://mubu.com/list",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-origin",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-requested-with": "XMLHttpRequest",
+                    },
+                    "method": "POST",
+                    "url": "https://mubu.com/api/message/get_message_unread",
                 },
                 "validate": [
                     {"eq": ["status_code", 200]},
