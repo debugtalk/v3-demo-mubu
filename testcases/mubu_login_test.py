@@ -12,6 +12,8 @@ class TestCaseMubuLogin(HttpRunner):
                 "password": "moFrwx$!kz3DTRm@@*aV",
             },
             "verify": False,
+            "base_url": "https://mubu.com",
+            "export": ["user_persistence", "jwt_token"],
             "path": "testcases/mubu_login_test.py",
         }
     )
@@ -29,7 +31,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
                     },
                     "method": "GET",
-                    "url": "https://mubu.com/",
+                    "url": "/",
                 },
                 "validate": [{"eq": ["status_code", 200]}],
             }
@@ -47,7 +49,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
                     },
                     "method": "GET",
-                    "url": "https://mubu.com/login",
+                    "url": "/login",
                 },
                 "validate": [{"eq": ["status_code", 200]}],
             }
@@ -65,7 +67,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
                     },
                     "method": "GET",
-                    "url": "https://mubu.com/login/password",
+                    "url": "/login/password",
                 },
                 "validate": [{"eq": ["status_code", 200]}],
             }
@@ -89,9 +91,12 @@ class TestCaseMubuLogin(HttpRunner):
                         "x-requested-with": "XMLHttpRequest",
                     },
                     "method": "POST",
-                    "url": "https://mubu.com/api/login/submit",
+                    "url": "/api/login/submit",
                 },
-                "extract": {"user_persistence": "cookies.user_persistence"},
+                "extract": {
+                    "user_persistence": "cookies.user_persistence",
+                    "jwt_token": 'cookies."Jwt-Token"',
+                },
                 "validate": [
                     {"eq": ["status_code", 200]},
                     {"eq": ["body.code", 0]},
@@ -112,7 +117,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
                     },
                     "method": "GET",
-                    "url": "https://mubu.com/list",
+                    "url": "/list",
                 },
                 "validate": [{"eq": ["status_code", 200]}],
             }
@@ -131,7 +136,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "x-requested-with": "XMLHttpRequest",
                     },
                     "method": "POST",
-                    "url": "https://mubu.com/api/list/tip_new_update",
+                    "url": "/api/list/tip_new_update",
                 },
                 "validate": [
                     {"eq": ["status_code", 200]},
@@ -160,7 +165,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "x-requested-with": "XMLHttpRequest",
                     },
                     "method": "POST",
-                    "url": "https://mubu.com/api/list/get",
+                    "url": "/api/list/get",
                 },
                 "validate": [
                     {"eq": ["status_code", 200]},
@@ -183,7 +188,7 @@ class TestCaseMubuLogin(HttpRunner):
                         "x-requested-with": "XMLHttpRequest",
                     },
                     "method": "POST",
-                    "url": "https://mubu.com/api/message/get_message_unread",
+                    "url": "/api/message/get_message_unread",
                 },
                 "validate": [
                     {"eq": ["status_code", 200]},

@@ -4,6 +4,7 @@ config:
         user_phone: '18613143458'
         password: moFrwx$!kz3DTRm@@*aV
     verify: false
+    base_url: https://api2.mubu.com
 teststeps:
 -   name: login mubu
     testcase: testcases/mubu.login.yml
@@ -202,7 +203,7 @@ teststeps:
                 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
             x-request-id: 4aca8841-02bb-47da-bb2f-66838ccd9a03
         method: GET
-        url: https://api2.mubu.com/v3/api/colla/register
+        url: /v3/api/colla/register
     validate:
     -   eq:
         - status_code
@@ -228,7 +229,7 @@ teststeps:
 #        params:
 #            documentId: $docId
 #            memberId: '1107710683005844033'
-#        url: https://api2.mubu.com/v3/api/colla/members
+#        url: /v3/api/colla/members
 #    validate:
 #    -   eq:
 #        - status_code
@@ -251,7 +252,7 @@ teststeps:
 #        params:
 #            documentId: $docId
 #            memberId: '1107710683005844033'
-#        url: https://api2.mubu.com/v3/api/colla/members
+#        url: /v3/api/colla/members
 #    validate:
 #    -   eq:
 #        - status_code
@@ -306,7 +307,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:4
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -358,7 +359,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:6
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -416,7 +417,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:9
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -475,7 +476,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:11
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -534,7 +535,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:13
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -593,7 +594,7 @@ teststeps:
 #            requestId: MESSAGE:1449164:1107710683005844033:14
 #            token: $docId
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/colla/message
+#        url: /v3/api/colla/message
 #    validate:
 #    -   eq:
 #        - status_code
@@ -622,7 +623,7 @@ teststeps:
 #            documentId: $docId
 #            keywords: ''
 #        method: POST
-#        url: https://api2.mubu.com/v3/api/document/get_recent_list
+#        url: /v3/api/document/get_recent_list
 #    validate:
 #    -   eq:
 #        - status_code

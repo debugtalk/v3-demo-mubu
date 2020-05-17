@@ -12,6 +12,7 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 "password": "moFrwx$!kz3DTRm@@*aV",
             },
             "verify": False,
+            "base_url": "https://api2.mubu.com",
             "path": "testcases/mubu_createdoc_test.py",
         }
     )
@@ -216,7 +217,7 @@ class TestCaseMubuCreatedoc(HttpRunner):
                         "x-request-id": "4aca8841-02bb-47da-bb2f-66838ccd9a03",
                     },
                     "method": "GET",
-                    "url": "https://api2.mubu.com/v3/api/colla/register",
+                    "url": "/v3/api/colla/register",
                 },
                 "validate": [
                     {"eq": ["status_code", 200]},
