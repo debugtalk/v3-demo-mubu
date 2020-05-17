@@ -95,6 +95,136 @@ class TestCaseMubuCreatedoc(HttpRunner):
                 ],
             }
         ),
+        TStep(
+            **{
+                "name": "/v3/api/document/get",
+                "request": {
+                    "headers": {
+                        "content-type": "application/json;charset=UTF-8",
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "80f926fe-37c4-45a0-aa85-96d78b3c78e0",
+                    },
+                    "json": {"docId": "$docId"},
+                    "method": "POST",
+                    "url": "https://api2.mubu.com/v3/api/document/get",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", "Success"]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/v3/api/user/current_level",
+                "request": {
+                    "headers": {
+                        "content-type": "application/json;charset=UTF-8",
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "d7f43e29-a625-4561-95f3-906134e71f37",
+                    },
+                    "json": {"document_id": "$docId"},
+                    "method": "POST",
+                    "url": "https://api2.mubu.com/v3/api/user/current_level",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", "OK"]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/v3/api/user/get_user_params",
+                "request": {
+                    "data": "",
+                    "headers": {
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "ccddfa20-40d6-42bc-8964-8730a57da9ba",
+                    },
+                    "method": "POST",
+                    "url": "https://api2.mubu.com/v3/api/user/get_user_params",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", "success"]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/v3/api/user/get_invite_count",
+                "request": {
+                    "headers": {
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "5d1ba900-f963-49c2-8125-6ffdbae77eaf",
+                    },
+                    "method": "GET",
+                    "url": "https://api2.mubu.com/v3/api/user/get_invite_count",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", None]},
+                ],
+            }
+        ),
+        TStep(
+            **{
+                "name": "/v3/api/colla/register",
+                "request": {
+                    "headers": {
+                        "data-unique-id": "5410ad30-980c-11ea-8923-e551129da490",
+                        "jwt-token": "$jwt_token",
+                        "referer": "https://mubu.com/doc$docId",
+                        "sec-fetch-dest": "empty",
+                        "sec-fetch-mode": "cors",
+                        "sec-fetch-site": "same-site",
+                        "token": "$jwt_token",
+                        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36",
+                        "x-request-id": "4aca8841-02bb-47da-bb2f-66838ccd9a03",
+                    },
+                    "method": "GET",
+                    "url": "https://api2.mubu.com/v3/api/colla/register",
+                },
+                "validate": [
+                    {"eq": ["status_code", 200]},
+                    {"eq": ["body.code", 0]},
+                    {"eq": ["body.msg", "Success"]},
+                ],
+            }
+        ),
     ]
 
 
